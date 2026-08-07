@@ -1,0 +1,13 @@
+ 		Open-Meteo API
+                      │
+                      ▼
+            extract.py (Requests)
+                      │
+                      ▼
+          transform.py (Pandas)
+                      │
+                      ▼
+        weather.db (SQLite)
+                      │
+                      ▼
+       Consultas SQL e análises
