@@ -16,6 +16,8 @@ def extract_weather():
     #Fetching data from server HTTP with a GET query
     response = requests.get(base_url, params=params)
 
+    response.raise_for_status()
+
     api_response = response.json()
 
 
