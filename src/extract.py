@@ -1,6 +1,9 @@
 import requests
 
-def extract_weather(latitude, longitude):
+def extract_weather():
+
+    latitude = -23.55
+    longitude = -46.63
 
     #Params definition
     base_url = "https://api.open-meteo.com/v1/forecast"
@@ -15,15 +18,8 @@ def extract_weather(latitude, longitude):
 
     api_response = response.json()
 
-    #Converts especific keys in python's dict
-    weather = {
-        "time": api_response["current"]["time"],
-        "temperature": api_response["current"]["temperature_2m"],
-        "humidity": api_response["current"]["relative_humidity_2m"],
-        "wind_direction": api_response["current"]["wind_direction_10m"],
-        "wind_speed": api_response["current"]["wind_speed_10m"],
-    }
 
-    return weather
+    return api_response
 
-print(extract_weather(-23.55, -46.63))
+if __name__ == "__main__":
+    print(extract_weather())
