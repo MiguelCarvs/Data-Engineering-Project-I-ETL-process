@@ -14,6 +14,6 @@ def transform_weather(api_response):
 
 if __name__ == "__main__":
     api_response = extract_weather()
-    weather = tranform_weather(api_response)
+    weather = transform_weather(api_response)
 
 print(weather)
