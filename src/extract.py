@@ -14,14 +14,18 @@ def extract_weather():
     }
 
     #Fetching data from server HTTP with a GET query
-    response = requests.get(base_url, params=params)
+    try:
+        response = requests.get(base_url, params=params, timeout=10)
 
-    response.raise_for_status()
+        response.raise_for_status()
 
-    api_response = response.json()
+        api_response = response.json()
 
-
-    return api_response
+        return api_response
+    except requests.exceptions.ConnectionError:
+        print("Unable to connect to the server.")
+    except requests.exceptions.HTTPError:
+        print("The API returned an HTTP error.")
 
 if __name__ == "__main__":
     print(extract_weather())
