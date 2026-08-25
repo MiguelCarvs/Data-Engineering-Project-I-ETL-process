@@ -26,6 +26,8 @@ def extract_weather():
         print("Unable to connect to the server.")
     except requests.exceptions.HTTPError:
         print("The API returned an HTTP error.")
+    except requests.exceptions.Timeout:
+        print("Response time exceeded the limit.")
 
 if __name__ == "__main__":
     print(extract_weather())
