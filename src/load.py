@@ -9,7 +9,7 @@ def load_weather(weather):
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS weather(
-        time TEXT,
+        time TEXT PRIMARY KEY,
         temperature REAL,
         humidity INTEGER,
         wind_direction INTEGER,
